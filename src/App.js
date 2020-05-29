@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Popup from "./components/Popup";
+import Stopwatch from "./components/StopWatch";
+import "./components/style.css";
+import TimerForm from "./components/TimerForm";
+import ListofTimer from "./components/ListofTimer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showPopup: false };
+  }
+
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <ListofTimer />
+        {/* <TimerForm /> */}
+        {/* <Stopwatch /> */}
+        {/* <button class="button" onClick={this.togglePopup.bind(this)}>
+          {" "}
+          +
+        </button>
+
+        {this.state.showPopup ? (
+          <Popup text="" closePopup={this.togglePopup.bind(this)} />
+        ) : null} */}
+      </div>
+    );
+  }
 }
-
-export default App;
