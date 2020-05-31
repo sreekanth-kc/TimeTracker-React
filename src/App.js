@@ -4,7 +4,7 @@ import Stopwatch from "./components/StopWatch";
 import "./components/style.css";
 import TimerForm from "./components/TimerForm";
 import ListofTimer from "./components/ListofTimer";
-
+import TimerListComponent from './component/TimerListComponent';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <ListofTimer />
+        <TimerListComponent />
         {/* <TimerForm /> */}
         {/* <Stopwatch /> */}
         {/* <button class="button" onClick={this.togglePopup.bind(this)}>
