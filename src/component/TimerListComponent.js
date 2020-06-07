@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TimerComponent from './TimerComponent';
 import TimerFormComponent from './TimerFormComponent';
+import "./style.css";
 
 export default class TimerListComponent extends Component {
 	constructor(props) {
@@ -68,7 +69,11 @@ export default class TimerListComponent extends Component {
 render() {
 	return (
 		<div>
+			<div className="display-flex">
 			<h1>List</h1>
+			<TimerFormComponent addTimer={this.addTimer} updateTimer = {this.updateTimer} editInfo={this.state.editInfo} editFlag={this.state.editFlag}/>
+			</div>
+			
 			<table>
 				<tbody>
 					{
@@ -82,7 +87,6 @@ render() {
 				</tbody>
 
 			</table>
-			<TimerFormComponent addTimer={this.addTimer} updateTimer = {this.updateTimer} editInfo={this.state.editInfo} editFlag={this.state.editFlag}/>
 		</div>
 	);
 
